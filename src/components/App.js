@@ -3,15 +3,17 @@ import { useState, useEffect } from "react";
 import { Link, Route } from "react-router-dom";
 import callToApi from "../services/api";
 import hp from "../images/azul_1.jpg";
-import harry from "../images/harry.jpg";
+import CharacterList from "./CharacterList";
 
 function App() {
-  const [character, setCharacter] = useState([]);
+  const [characters, setCharacters] = useState([]);
+
   useEffect(() => {
     callToApi().then((charactersData) => {
-      setCharacter(charactersData);
+      setCharacters(charactersData);
     });
   }, []);
+
   return (
     <>
       <header>
@@ -31,15 +33,7 @@ function App() {
             </select>
           </form>
         </section>
-        <section>
-          <ul>
-            <li>
-              <img src={harry} alt="Foto de Harry Potter" />
-              <h4>Harry Potter</h4>
-              <p>Human</p>
-            </li>
-          </ul>
-        </section>
+        <CharacterList characters={characters} />
       </main>
     </>
   );
