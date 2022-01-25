@@ -1,31 +1,48 @@
 // Fichero src/components/App.js
-
+import { useState, useEffect } from "react";
 import { Link, Route } from "react-router-dom";
+import callToApi from "../services/api";
+import hp from "../images/azul_1.jpg";
+import harry from "../images/harry.jpg";
 
-const App = () => {
+function App() {
+  const [character, setCharacter] = useState([]);
+  useEffect(() => {
+    callToApi().then((charactersData) => {
+      setCharacter(charactersData);
+    });
+  }, []);
   return (
-    <div>
-      <h2>Este título aparece siempre</h2>
-
-      <Route path="/contacto">
-        <h2>
-          Este título solo aparece cuando la usuaria entra en la página de
-          contacto
-        </h2>
-      </Route>
-
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Ir al inicio</Link>
-          </li>
-          <li>
-            <Link to="/contacto">Ir a contacto</Link>
-          </li>
-        </ul>
-      </nav>
-    </div>
+    <>
+      <header>
+        <img src={hp} alt="Harry Potter Logo" />
+      </header>
+      <main>
+        <section>
+          <form action="">
+            <label htmlFor="name">Busca por personaje: </label>
+            <input type="text" />
+            <label htmlFor="house">Selecciona la casa: </label>
+            <select name="house" id="house">
+              <option value="Gryffindor">Gryffindor</option>
+              <option value="Hufflepuff">Hufflepuff</option>
+              <option value="Ravenclaw">Ravenclaw</option>
+              <option value="Slytherin">Slytherin</option>
+            </select>
+          </form>
+        </section>
+        <section>
+          <ul>
+            <li>
+              <img src={harry} alt="Foto de Harry Potter" />
+              <h4>Harry Potter</h4>
+              <p>Human</p>
+            </li>
+          </ul>
+        </section>
+      </main>
+    </>
   );
-};
+}
 
 export default App;
