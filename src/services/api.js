@@ -11,10 +11,11 @@ const callToApi = () => {
           alive: character.alive,
           gender: character.gender,
           alternate_names: character.alternate_names,
+          actor: character.actor,
           id: `${character.name} ${character.actor}`,
         };
       });
-      console.log(cleanData);
+
       return cleanData;
     });
 };
