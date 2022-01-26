@@ -1,11 +1,10 @@
 // Fichero src/components/App.js
 import { useState, useEffect } from "react";
-import { Link, Route, useRouteMatch, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import callToApi from "../services/api";
 import hp from "../images/azul_1.jpg";
 import CharacterList from "./CharacterList";
 import Filters from "./Filters";
-import CharacterCard from "./CharacterCard";
 import CharacterDetail from "./CharacterDetail";
 
 function App() {
@@ -19,6 +18,7 @@ function App() {
     });
   }, [filterHouse]);
 
+  // Filter handler function
   const handleFilter = (data) => {
     if (data.key === "name") {
       setFilterCharacter(data.value);
@@ -26,6 +26,8 @@ function App() {
       setFilterHouse(data.value);
     }
   };
+
+  // Filter characters function
 
   const filteredCharacters = characters
     .filter((character) => {
@@ -36,6 +38,8 @@ function App() {
     .filter((character) => {
       return character.house === filterHouse;
     });
+
+  // Render Character Detail function
 
   const renderCharacterDetail = (props) => {
     const routeId = props.match.params.characterId;
