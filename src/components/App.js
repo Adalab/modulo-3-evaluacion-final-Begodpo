@@ -1,21 +1,23 @@
 // Fichero src/components/App.js
 import { useState, useEffect } from "react";
-import { Link, Route, useRouteMatch } from "react-router-dom";
+import { Link, Route, useRouteMatch, Switch } from "react-router-dom";
 import callToApi from "../services/api";
 import hp from "../images/azul_1.jpg";
 import CharacterList from "./CharacterList";
 import Filters from "./Filters";
+import CharacterCard from "./CharacterCard";
+import CharacterDetail from "./CharacterDetail";
 
 function App() {
   const [characters, setCharacters] = useState([]);
   const [filterCharacter, setFilterCharacter] = useState("");
-  const [filterHouse, setFilterHouse] = useState("");
+  const [filterHouse, setFilterHouse] = useState("gryffindor");
 
   useEffect(() => {
     callToApi().then((charactersData) => {
       setCharacters(charactersData);
     });
-  }, []);
+  }, [filterHouse]);
 
   const handleFilter = (data) => {
     if (data.key === "name") {
@@ -34,18 +36,38 @@ function App() {
     .filter((character) => {
       return character.house === filterHouse;
     });
+
+  const renderCharacterDetail = (props) => {
+    const routeId = props.match.params.characterId;
+
+    const foundCharacter = characters.find(
+      (character) => character.id === routeId
+    );
+    return <CharacterDetail character={foundCharacter} />;
+  };
+
   return (
     <>
       <header>
         <img src={hp} alt="Harry Potter Logo" />
       </header>
+
       <main>
-        <Filters
-          handleFilter={handleFilter}
-          filterCharacter={filterCharacter}
-          filterHouse={filterHouse}
-        />
-        <CharacterList characters={filteredCharacters} />
+        <Switch>
+          <Route path="/" exact>
+            <Filters
+              handleFilter={handleFilter}
+              filterCharacter={filterCharacter}
+              filterHouse={filterHouse}
+            />
+            <CharacterList characters={filteredCharacters} />
+          </Route>
+
+          <Route
+            path="/character/:characterId"
+            render={renderCharacterDetail}
+          ></Route>
+        </Switch>
       </main>
     </>
   );

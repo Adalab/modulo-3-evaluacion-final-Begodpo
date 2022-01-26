@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
+
 const CharacterCard = (props) => {
   const getImage = () => {
     return props.character.image === ""
@@ -5,8 +7,8 @@ const CharacterCard = (props) => {
       : props.character.image;
   };
   return (
-    <article>
-      <a href="#">
+    <Link to={`/character/${props.character.id}`}>
+      <article>
         <img
           src={getImage()}
           alt={`Foto de ${props.character.name}`}
@@ -14,8 +16,8 @@ const CharacterCard = (props) => {
         />
         <h4>{props.character.name}</h4>
         <p>{props.character.species}</p>
-      </a>
-    </article>
+      </article>
+    </Link>
   );
 };
 export default CharacterCard;
