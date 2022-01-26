@@ -5,8 +5,14 @@ const Filter = (props) => {
   return (
     <section>
       <form action="">
-        <FilterCharacter handleFilter={props.handleFilter} />
-        <FilterHouse />
+        <FilterCharacter
+          handleFilter={props.handleFilter}
+          filterCharacter={props.filterCharacter}
+        />
+        <FilterHouse
+          handleFilter={props.handleFilter}
+          filterHouse={props.filterHouse}
+        />
       </form>
     </section>
   );

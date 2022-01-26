@@ -1,8 +1,8 @@
 import CharacterCard from "./CharacterCard";
 function CharacterList(props) {
-  const characterElements = props.characters.map((character) => {
+  const characterElements = props.characters.map((character, index) => {
     return (
-      <li key={character.id}>
+      <li key={index}>
         <CharacterCard character={character} />
       </li>
     );

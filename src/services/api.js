@@ -1,5 +1,5 @@
 const callToApi = () => {
-  return fetch("http://hp-api.herokuapp.com/api/characters/house/gryffindor")
+  return fetch("http://hp-api.herokuapp.com/api/characters")
     .then((response) => response.json())
     .then((data) => {
       const cleanData = data.map((character) => {
@@ -12,7 +12,7 @@ const callToApi = () => {
           gender: character.gender,
           alternate_names: character.alternate_names,
           actor: character.actor,
-          id: `${character.name} ${character.actor}`,
+          // id: `${character.name} ${character.actor}`,
         };
       });
 
