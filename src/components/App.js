@@ -10,10 +10,10 @@ import CharacterDetail from "./CharacterDetail";
 function App() {
   const [characters, setCharacters] = useState([]);
   const [filterCharacter, setFilterCharacter] = useState("");
-  const [filterHouse, setFilterHouse] = useState("gryffindor");
+  const [filterHouse, setFilterHouse] = useState("Gryffindor");
 
   useEffect(() => {
-    callToApi().then((charactersData) => {
+    callToApi(filterHouse).then((charactersData) => {
       setCharacters(charactersData);
     });
   }, [filterHouse]);
@@ -52,8 +52,9 @@ function App() {
 
   return (
     <>
-      <header>
-        <img src={hp} alt="Harry Potter Logo" />
+      <header className="header">
+        <img className="image-header" src={hp} alt="Harry Potter Logo" />
+        <h1 className="header__title">Harry Potter</h1>
       </header>
 
       <main>
