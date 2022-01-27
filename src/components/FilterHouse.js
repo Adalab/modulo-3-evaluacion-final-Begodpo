@@ -7,8 +7,11 @@ function FilterHouse(props) {
   };
   return (
     <>
-      <label htmlFor="house">Selecciona la casa: </label>
+      <label className="form__label" htmlFor="house">
+        Selecciona la casa:{" "}
+      </label>
       <select
+        className="form__select"
         name="house"
         id="house"
         value={props.filterHouse}

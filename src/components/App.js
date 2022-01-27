@@ -1,4 +1,6 @@
 // Fichero src/components/App.js
+import "../styles/App.scss";
+import "../styles/componentes/Header.scss";
 import { useState, useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 import callToApi from "../services/api";
@@ -53,11 +55,10 @@ function App() {
   return (
     <>
       <header className="header">
-        <img className="image-header" src={hp} alt="Harry Potter Logo" />
         <h1 className="header__title">Harry Potter</h1>
       </header>
 
-      <main>
+      <main className="main">
         <Switch>
           <Route path="/" exact>
             <Filters

@@ -1,4 +1,5 @@
 import CharacterCard from "./CharacterCard";
+import "../styles/componentes/CharactersList.scss";
 function CharacterList(props) {
   console.log(props);
   const characterElements = props.characters.map((character, index) => {
@@ -10,7 +11,7 @@ function CharacterList(props) {
   });
   return (
     <section>
-      <ul>{characterElements}</ul>
+      <ul className="charactersList">{characterElements}</ul>
     </section>
   );
 }

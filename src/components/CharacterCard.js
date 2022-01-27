@@ -19,14 +19,15 @@ const CharacterCard = (props) => {
   };
   return (
     <Link to={`/character/${props.character.id}`}>
-      <article>
+      <article className="charactersList__card">
         <img
+          className="charactersList__card--image"
           src={getImage()}
           alt={`Foto de ${props.character.name}`}
           title={`Foto de ${props.character.name}`}
         />
-        <h4>{props.character.name}</h4>
-        <p>{translateSpecies()}</p>
+        <h4 className="charactersList__card--title">{props.character.name}</h4>
+        <p className="charactersList__card--text">{translateSpecies()}</p>
       </article>
     </Link>
   );

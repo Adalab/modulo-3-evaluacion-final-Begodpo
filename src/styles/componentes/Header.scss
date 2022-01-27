@@ -1,1 +1,12 @@
 @import "../core/variables";
+
+.header {
+  padding-top: 30px;
+  background-color: rgb(177, 170, 170);
+  &__title {
+    text-align: center;
+    font-size: 60px;
+    color: rgb(126, 105, 42);
+    text-shadow: 2px 2px 2px rgb(21, 21, 22);
+  }
+}

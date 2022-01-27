@@ -7,16 +7,19 @@ function FilterCharacter(props) {
   };
 
   return (
-    <>
-      <label htmlFor="name">Busca por personaje: </label>
+    <div>
+      <label className="form__label" htmlFor="name">
+        Busca por personaje:{" "}
+      </label>
       <input
+        className="form__input"
         id="name"
         type="text"
         name="name"
         value={props.filterCharacter}
         onChange={handleChangeInput}
       />
-    </>
+    </div>
   );
 }
 
