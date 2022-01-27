@@ -1,17 +1,36 @@
 .form {
   padding-top: 30px;
   width: 100%;
+  @media (min-width: 768px) {
+    padding: 40px 0px 20px 70px;
+  }
   &__label {
     color: rgb(41, 37, 37);
     font-size: 18px;
     margin: 20px 0px;
+    @media (min-width: 768px) {
+      font-size: 25px;
+      margin: 25px 0px;
+    }
   }
   &__input {
     width: 150px;
     margin-bottom: 20px;
+    border: rgb(126, 105, 42) solid;
+    border-radius: 3px;
+    @media (min-width: 768px) {
+      width: 350px;
+      height: 30px;
+    }
   }
   &__select {
     width: 150px;
-    margin: 0px 0px 20px 10px;
+    margin: 0px 0px 20px 14px;
+    border: rgb(126, 105, 42) solid;
+    border-radius: 3px;
+    @media (min-width: 768px) {
+      width: 350px;
+      height: 30px;
+    }
   }
 }
