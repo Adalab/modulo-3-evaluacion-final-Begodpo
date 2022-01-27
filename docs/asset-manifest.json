@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "./static/css/main.cef8263b.css",
+    "main.js": "./static/js/main.d017548d.js",
+    "static/media/azul_1.jpg": "./static/media/azul_1.b315ebaa2e939f7cbb55.jpg",
+    "static/media/HARRYP.ttf": "./static/media/HARRYP.a65869c0c1a4b3d4fcfc.ttf",
+    "index.html": "./index.html",
+    "main.cef8263b.css.map": "./static/css/main.cef8263b.css.map",
+    "main.d017548d.js.map": "./static/js/main.d017548d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cef8263b.css",
+    "static/js/main.d017548d.js"
+  ]
+}
