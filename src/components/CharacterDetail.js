@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import "../styles/componentes/CharacterDetail.scss";
+
 function CharacterDetail(props) {
   if (props.character === undefined) {
     return <p>personaje no encontrado</p>;
@@ -23,24 +25,37 @@ function CharacterDetail(props) {
   };
 
   return (
-    <section>
-      <h2>Detalle del personaje</h2>
+    <section className="detailSection">
+      <h2 className="detailSection__title">Detalle del personaje</h2>
       <Link to="/">
-        <button>Volver</button>
+        <button className="detailSection__button">Volver</button>
       </Link>
 
-      <article>
+      <article className="detailSection__article">
         <img
+          className="detailSection__article--image"
           src={props.character.image}
           alt={`Foto de ${props.character.name}`}
           title={`Foto de ${props.character.name}`}
         />
-        <h4>{props.character.name}</h4>
-        <p>Especie: {translateSpecies()}</p>
-        <p>Estatus: {translateStatus()}</p>
-        <p>Género: {translateGender()}</p>
-        <p>Casa: {props.character.house}</p>
-        <p>Nombre alternativo: {props.character.alternate_names}</p>
+        <h4 className="detailSection__article--title">
+          {props.character.name}
+        </h4>
+        <p className="detailSection__article--text">
+          Especie: {translateSpecies()}
+        </p>
+        <p className="detailSection__article--text">
+          Estatus: {translateStatus()}
+        </p>
+        <p className="detailSection__article--text">
+          Género: {translateGender()}
+        </p>
+        <p className="detailSection__article--text">
+          Casa: {props.character.house}
+        </p>
+        <p className="detailSection__article--text">
+          Nombre alternativo: {props.character.alternate_names}
+        </p>
       </article>
     </section>
   );
