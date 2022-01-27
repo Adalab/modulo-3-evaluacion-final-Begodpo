@@ -9,6 +9,9 @@
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 10px;
   }
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 
   &__card {
     text-align: center;
@@ -18,6 +21,10 @@
       @media (min-width: 768px) {
         width: 145px;
         height: 195px;
+      }
+      @media (min-width: 1024px) {
+        width: 220px;
+        height: 280px;
       }
     }
     &--title {
