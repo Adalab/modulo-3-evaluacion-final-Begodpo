@@ -1,6 +1,7 @@
 import FilterCharacter from "./FilterCharacter";
 import FilterHouse from "./FilterHouse";
 import "../styles/componentes/Filters.scss";
+import FilterGender from "./FilterGender";
 
 const handleSubmit = (ev) => {
   ev.preventDefault();
@@ -17,6 +18,10 @@ const Filter = (props) => {
         <FilterHouse
           handleFilter={props.handleFilter}
           filterHouse={props.filterHouse}
+        />
+        <FilterGender
+          handleFilter={props.handleFilter}
+          filterGender={props.filterGender}
         />
       </form>
     </section>
