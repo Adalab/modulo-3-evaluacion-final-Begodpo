@@ -4,7 +4,7 @@ import "../styles/componentes/Header.scss";
 import { useState, useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 import callToApi from "../services/api";
-import hp from "../images/azul_1.jpg";
+
 import CharacterList from "./CharacterList";
 import Filters from "./Filters";
 import CharacterDetail from "./CharacterDetail";
