@@ -1,50 +1,80 @@
 .form {
   padding-top: 30px;
   width: 100wh;
+  display: flex;
+  flex-direction: column;
   @media (min-width: 768px) {
-    padding: 40px 0px 20px 70px;
+    padding: 40px 0px 20px 0px;
+    align-items: center;
   }
   @media (min-width: 1024px) {
-    padding: 50px 0px 25px 70px;
+    padding: 50px 0px 25px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
   }
   &__label {
-    color: rgb(41, 37, 37);
+    color: rgb(241, 231, 231);
     font-size: 18px;
     margin: 20px 0px;
     @media (min-width: 768px) {
-      font-size: 25px;
+      font-size: 30px;
       margin: 25px 0px;
     }
     @media (min-width: 1024px) {
-      font-size: 28px;
-      margin-left: 200px;
+      font-size: 40px;
+      margin-left: 20px;
     }
   }
   &__input {
     width: 150px;
+    height: 25px;
     margin-bottom: 20px;
-    border: rgb(126, 105, 42) solid;
+    border: rgb(146, 131, 85) solid;
     border-radius: 3px;
     @media (min-width: 768px) {
-      width: 350px;
+      width: 300px;
       height: 30px;
+      margin: 0px 0px 20px 15px;
     }
     @media (min-width: 1024px) {
-      width: 400px;
+      width: 250px;
     }
   }
   &__select {
     width: 150px;
-    margin: 0px 0px 20px 10px;
+    height: 25px;
+    margin: 0px 0px 20px 15px;
     border: rgb(126, 105, 42) solid;
     border-radius: 3px;
     @media (min-width: 768px) {
-      width: 350px;
-      height: 30px;
-      margin: 0px 0px 20px 14px;
+      width: 300px;
+      height: 32px;
+      margin: 0px 0px 20px 15px;
     }
     @media (min-width: 1024px) {
-      width: 400px;
+      width: 200px;
     }
+  }
+}
+
+.form-character {
+  @media (min-width: 1024px) {
+    display: flex;
+    align-items: flex-end;
+  }
+}
+.form-house {
+  display: flex;
+  align-items: flex-end;
+  @media (min-width: 1024px) {
+  }
+}
+.form-gender {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 20px;
+  @media (min-width: 1024px) {
   }
 }

@@ -1,8 +1,16 @@
+/*body {
+  background-color: rgb(177, 170, 170);
+}*/
+body,
+html {
+  height: 100%;
+  background-repeat: no-repeat;
+  background: url(https://p4.wallpaperbetter.com/wallpaper/815/910/541/8k-hogwarts-4k-burning-wallpaper-preview.jpg)
+    no-repeat center center fixed;
+  background-size: 100% 100%;
+}
 .main {
   padding-left: 50px;
   padding-right: 50px;
   height: 100%;
-}
-body {
-  background-color: rgb(177, 170, 170);
 }

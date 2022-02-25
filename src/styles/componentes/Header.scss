@@ -2,20 +2,20 @@
 
 .header {
   padding-top: 40px;
-  background-color: rgb(177, 170, 170);
+
   @media (min-width: 768px) {
     padding-top: 50px;
   }
   &__title {
     text-align: center;
     font-size: 60px;
-    color: rgb(126, 105, 42);
-    text-shadow: 2px 2px 2px rgb(21, 21, 22);
+    color: rgb(146, 131, 85);
+    text-shadow: 2px 2px 2px rgb(185, 178, 178);
     @media (min-width: 768px) {
       font-size: 100px;
     }
     @media (min-width: 1024px) {
-      font-size: 120px;
+      font-size: 150px;
     }
   }
 }

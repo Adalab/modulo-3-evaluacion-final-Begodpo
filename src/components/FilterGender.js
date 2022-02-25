@@ -7,17 +7,19 @@ function FilterGender(props) {
   };
   return (
     <>
-      <label htmlFor="">Filtra por género</label>
-      <select
-        name="gender"
-        id="gender"
-        onChange={handleChangeGender}
-        value={props.filterGender}
-      >
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-        <option value="unknown">Unknown</option>
-      </select>
+      <div className="form-gender">
+        <label className="form__label">Filtra por género: </label>
+        <select
+          className="form__select"
+          name="gender"
+          id="gender"
+          onChange={handleChangeGender}
+          value={props.filterGender}
+        >
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
     </>
   );
 }

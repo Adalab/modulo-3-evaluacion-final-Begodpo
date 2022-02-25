@@ -7,7 +7,7 @@ function FilterCharacter(props) {
   };
 
   return (
-    <div>
+    <div className="form-character">
       <label className="form__label" htmlFor="name">
         Busca por personaje:{" "}
       </label>
